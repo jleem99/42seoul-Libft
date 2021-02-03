@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:31 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:36:31 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:32:04 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	const	slen = ft_strlen(s);
+	size_t const	slen = ft_strlen(s);
 	size_t			copylen;
 	char			*ret;
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	copylen = ((slen - start) > len) ? len : (slen - start);
 	if (!(ret = malloc(sizeof(*ret) * (copylen + 1))))
-		return (0);
+		return (NULL);
 	ft_memcpy(ret, s + start, copylen);
 	ret[copylen] = '\0';
 	return (ret);

@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:03 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:26:42 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*const	ret = malloc(sizeof(*ret));
+	t_list *const	ret = malloc(sizeof(*ret));
 
 	if (!ret)
-		return (0);
+		return (NULL);
 	ret->content = content;
-	ret->next = 0;
+	ret->next = NULL;
 	return (ret);
 }

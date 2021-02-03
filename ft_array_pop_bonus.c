@@ -6,17 +6,17 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:31:08 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:22:22 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-void			*ft_array_pop(t_array *arr)
+void	*ft_array_pop(t_array *arr)
 {
-	void		**data_new;
-	void		*ret;
-	size_t		i;
+	void	**data_new;
+	void	*ret;
+	size_t	i;
 
 	if (!(data_new = malloc(sizeof(void *) * (arr->size - 1))))
 		return (NULL);

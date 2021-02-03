@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 02:10:05 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:23:43 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!(*lst))
-	{
-		*lst = new;
+	if (!lst)
 		return ;
-	}
-	ft_lstlast(*lst)->next = new;
+	if (!(*lst))
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }

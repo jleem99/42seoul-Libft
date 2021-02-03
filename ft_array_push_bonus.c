@@ -6,16 +6,16 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:21:05 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:22:33 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-int				ft_array_push(t_array *arr, void *element)
+int		ft_array_push(t_array *arr, void *element)
 {
-	void		**data_new;
-	size_t		i;
+	void	**data_new;
+	size_t	i;
 
 	if (!(data_new = malloc(sizeof(void *) * (arr->size + 1))))
 		return (0);

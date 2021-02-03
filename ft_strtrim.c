@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/11 21:51:38 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:31:23 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (l_idx > r_idx)
 		return (ft_strdup(""));
 	if (!(ret = malloc(sizeof(*ret) * (r_idx - l_idx + 2))))
-		return (0);
+		return (NULL);
 	ft_memcpy(ret, s1 + l_idx, r_idx - l_idx + 1);
 	ret[r_idx - l_idx + 1] = '\0';
 	return (ret);

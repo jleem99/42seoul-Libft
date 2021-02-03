@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 02:11:19 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:25:35 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*newlst;
 
 	if (!lst || !f)
-		return (0);
-	ret = 0;
+		return (NULL);
+	ret = NULL;
 	while (lst)
 	{
 		newlst = ft_lstnew(f(lst->content));
 		if (!newlst)
 		{
 			ft_lstclear(&ret, del);
-			return (0);
+			return (NULL);
 		}
 		ft_lstadd_back(&ret, newlst);
 		lst = lst->next;

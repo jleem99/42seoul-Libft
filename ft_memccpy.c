@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:05 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/04 01:27:40 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dest, void const *src, int c, size_t n)
 	size_t	i;
 
 	if (dest == src)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
@@ -26,5 +26,5 @@ void	*ft_memccpy(void *dest, void const *src, int c, size_t n)
 			return ((char *)dest + i + 1);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
