@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/01/14 02:24:08 by jleem            ###   ########.fr        #
+#    Updated: 2021/02/09 10:20:09 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ OBJS_P2		= $(SRCS_P2:.c=.o)
 OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 OBJS_ALL	= $(SRCS_ALL:.c=.o)
 
-ifdef WITH_BONUS
-	OBJS_TARGET = $(OBJS_ALL) 
+ifdef MAKE_BONUS
+	OBJS_TARGET = $(OBJS_ALL)
 else
 	OBJS_TARGET = $(OBJS_P1) $(OBJS_P2)
 endif
@@ -52,6 +52,6 @@ fclean		: clean
 re			: fclean all
 
 bonus		:
-	$(MAKE) WITH_BONUS=1 $(NAME)
+	$(MAKE) MAKE_BONUS=1
 
 .PHONY		: all clean fclean re bonus
