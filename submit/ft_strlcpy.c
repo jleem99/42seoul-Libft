@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:24 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 00:45:09 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/11 09:56:44 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 size_t	ft_strlcpy(char *dest, char const *src, size_t dstsize)
 {
-	size_t const	srclen = ft_strlen(src);
-	size_t			cpylen;
-	size_t			i;
+	size_t	srclen;
+	size_t	cpylen;
+	size_t	i;
 
+	if (!dest)
+		return (0);
+	srclen = ft_strlen(src);
 	if (dstsize == 0)
 		return (srclen);
 	cpylen = (dstsize > srclen) ? srclen : dstsize - 1;
