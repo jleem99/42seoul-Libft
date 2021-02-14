@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/14 15:20:58 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_array
 t_array			*ft_make_array(size_t size);
 void			ft_free_array(t_array *arr);
 void			ft_free_array_data(t_array *arr);
+void			ft_free_array_all(t_array *arr);
 int				ft_array_push(t_array *arr, void *element);
 void			*ft_array_pop(t_array *arr);
 
