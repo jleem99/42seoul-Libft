@@ -6,12 +6,11 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:08:54 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/13 21:47:41 by jleem            ###   ########.fr       */
+/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static int	ft_isspace(int c)
 {
@@ -23,19 +22,10 @@ static int	ft_isspace(int c)
 			c == ' ');
 }
 
-static int	check_range(unsigned long long num, int sig)
-{
-	if (num > LLONG_MAX - 1 && sig == -1)
-		return (0);
-	if (num > LLONG_MAX && sig == 1)
-		return (-1);
-	return (num * sig);
-}
-
 int			ft_atoi(char const *str)
 {
-	unsigned long long	num;
-	int					sig;
+	int		num;
+	int		sig;
 
 	num = 0;
 	while (ft_isspace(*str))
@@ -56,5 +46,5 @@ int			ft_atoi(char const *str)
 		num *= 10;
 		num += *(str++) - '0';
 	}
-	return (check_range(num, sig));
+	return (sig * num);
 }
