@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/14 15:20:58 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/14 17:19:03 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@
 # include "libft.h"
 
 /*
+** Personal Functions
+*/
+void			ft_free_split(char **split);
+
+/*
 ** Personal Functions (libc)
 */
 int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_isspace(int c);
+int				ft_strcmp(char const *s1, char const *s2);
 
 /*
 ** Personal Functions (array)
