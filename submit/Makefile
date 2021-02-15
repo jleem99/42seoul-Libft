@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/02/11 10:39:34 by jleem            ###   ########.fr        #
+#    Updated: 2021/02/15 22:31:22 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ fclean		: clean
 re			: fclean all
 
 bonus		:
+	sleep 1
 	$(MAKE) MAKE_BONUS=1
 
 .PHONY		: all clean fclean re bonus
