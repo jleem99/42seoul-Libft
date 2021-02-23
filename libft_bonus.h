@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/14 17:19:03 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/23 20:21:32 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_isspace(int c);
 int				ft_strcmp(char const *s1, char const *s2);
+char			*ft_strcpy(char *dest, char *src);
+char			*ft_strcat(char *dest, char *src);
 
 /*
 ** Personal Functions (array)
