@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:20:55 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/23 20:21:13 by jleem            ###   ########.fr       */
+/*   Updated: 2021/05/26 22:39:51 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strcat(char *dest, char *src)
 	char *const	ret = dest;
 
 	while (*dest != '\0')
-			dest++;
+		dest++;
 	while (*src != '\0')
-			*(dest++) = *(src++);
+		*(dest++) = *(src++);
 	*dest = '\0';
 	return (ret);
 }
