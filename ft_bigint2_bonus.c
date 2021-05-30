@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:32:06 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/26 22:46:23 by jleem            ###   ########.fr       */
+/*   Updated: 2021/05/31 01:31:31 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ uint8_t		*bigint_copy_data(t_bigint *bigint)
 
 	ft_memcpy(new_data, bigint->data, bigint->size);
 	return (new_data);
+}
+
+t_bigint	*bigint_append(t_bigint *bigint1, t_bigint *bigint2)
+{
+	t_bigint	*new_bigint;
+
+	new_bigint = make_bigint(bigint1->size + bigint2->size, bigint1->base);
+	ft_memcpy(new_bigint->data, bigint2->data, bigint2->size);
+	ft_memcpy(new_bigint->data + bigint2->size, bigint1->data, bigint1->size);
+	return (new_bigint);
 }
 
 void		bigint_resize(t_bigint *bigint, size_t new_size)
