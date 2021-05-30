@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:56:17 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/26 22:46:51 by jleem            ###   ########.fr       */
+/*   Updated: 2021/05/31 01:38:26 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,8 @@ void	bigint_multiply(t_bigint *bigint, uint8_t multiplier)
 	uint16_t	product;
 
 	byteidx = bigint->size;
-	while (byteidx > 0)
+	while (byteidx-- > 0)
 	{
-		byteidx--;
 		product = bigint->data[byteidx] * multiplier;
 		bigint_set_digit(bigint, product, byteidx);
 	}
