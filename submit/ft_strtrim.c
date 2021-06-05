@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:31:23 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/11 09:51:49 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	r_idx;
 	char	*ret;
 
+	if (!s1)
+		return (NULL);
 	l_idx = 0;
 	while (ft_strchr(set, s1[l_idx]) && s1[l_idx])
 		l_idx++;

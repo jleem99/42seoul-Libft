@@ -6,13 +6,18 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:31 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:32:04 by jleem            ###   ########.fr       */
+/*   Updated: 2021/05/26 22:41:01 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t	ft_min(size_t a, size_t b)
+{
+	return (a > b ? b : a);
+}
+
+char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t const	slen = ft_strlen(s);
 	size_t			copylen;
@@ -20,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s || start >= slen)
 		return (ft_strdup(""));
-	copylen = ((slen - start) > len) ? len : (slen - start);
+	copylen = ft_min(slen - start, len);
 	if (!(ret = malloc(sizeof(*ret) * (copylen + 1))))
 		return (NULL);
 	ft_memcpy(ret, s + start, copylen);

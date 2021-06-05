@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_free_split_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 00:09:19 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/11 10:31:25 by jleem            ###   ########.fr       */
+/*   Created: 2021/02/14 17:08:18 by jleem             #+#    #+#             */
+/*   Updated: 2021/02/14 17:17:08 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_free_split(char **split)
 {
-	size_t	size;
-	char	*ret;
+	int	i;
 
-	if (!s1)
-		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!s1 || !(ret = malloc(size)))
-		return (NULL);
-	while (*s1)
-		*(ret++) = *(s1++);
-	while (*s2)
-		*(ret++) = *(s2++);
-	*ret = '\0';
-	return (ret - size + 1);
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
 }

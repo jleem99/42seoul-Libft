@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:20:24 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:22:52 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/14 15:21:34 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,10 @@ void	ft_free_array_data(t_array *arr)
 	i = 0;
 	while (i < arr->size)
 		free(arr->data[i++]);
+}
+
+void	ft_free_array_all(t_array *arr)
+{
+	ft_free_array_data(arr);
+	ft_free_array(arr);
 }

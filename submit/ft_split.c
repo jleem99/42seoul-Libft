@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:18 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/29 07:45:05 by jleem            ###   ########.fr       */
+/*   Updated: 2021/02/11 09:50:14 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int	ft_count_strs(char const *s, char c)
 {
 	int	str_num;
 
+	if (!s)
+		return (-1);
 	str_num = 0;
 	while (*s != '\0')
 	{
@@ -54,7 +56,7 @@ char		**ft_split(char const *s, char c)
 	int			str_idx;
 	int			word_idx;
 
-	if (!(ret = malloc(sizeof(*ret) * (str_num + 1))))
+	if (str_num == -1 || !(ret = malloc(sizeof(*ret) * (str_num + 1))))
 		return (NULL);
 	str_idx = 0;
 	while (str_idx < str_num)

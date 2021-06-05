@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_bigint_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 00:09:19 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/11 10:31:25 by jleem            ###   ########.fr       */
+/*   Created: 2021/05/23 17:27:30 by jleem             #+#    #+#             */
+/*   Updated: 2021/05/26 22:44:20 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
+#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_bigint	*make_bigint(size_t size, uint8_t base)
 {
-	size_t	size;
-	char	*ret;
+	t_bigint *const	bigint = malloc(sizeof(t_bigint));
 
-	if (!s1)
-		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!s1 || !(ret = malloc(size)))
-		return (NULL);
-	while (*s1)
-		*(ret++) = *(s1++);
-	while (*s2)
-		*(ret++) = *(s2++);
-	*ret = '\0';
-	return (ret - size + 1);
+	bigint->data = ft_calloc(size, sizeof(uint8_t));
+	bigint->base = base;
+	bigint->size = size;
+	return (bigint);
+}
+
+void		free_bigint(t_bigint *bigint)
+{
+	free(bigint->data);
+	free(bigint);
 }
