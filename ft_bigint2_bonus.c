@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:32:06 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/31 01:31:31 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/06 07:06:00 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ t_bigint	*bigint_append(t_bigint *bigint1, t_bigint *bigint2)
 void		bigint_resize(t_bigint *bigint, size_t new_size)
 {
 	uint8_t *const	new_data = ft_calloc(new_size, sizeof(uint8_t));
+	size_t const	copy_size = ft_min(new_size, bigint->size);
 
-	if (new_size > bigint->size)
-		ft_memcpy(new_data, bigint->data, bigint->size);
-	else
-		ft_memcpy(new_data, bigint->data, new_size);
+	ft_memcpy(new_data, bigint->data, copy_size);
 	free(bigint->data);
 	bigint->data = new_data;
 	bigint->size = new_size;
