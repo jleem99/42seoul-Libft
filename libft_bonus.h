@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/06 06:37:54 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/08 22:39:06 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int				ft_isspace(int c);
 int				ft_strcmp(char const *s1, char const *s2);
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strcat(char *dest, char *src);
+long			ft_atol(char const *str);
+long long		ft_atoll(char const *str);
 
 /*
 ** Personal Functions (basic math)

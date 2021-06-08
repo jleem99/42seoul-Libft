@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/06 06:52:15 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/08 22:39:34 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS_BONUS	= $(patsubst %, $(SRCDIR)/ft_%.c, \
 SRCS_CUSTOM	= $(patsubst %, $(SRCDIR)/ft_%_bonus.c, \
 				free_split minmax \
 				islower isupper isspace strcmp strcpy strcat \
+				atol atoll \
 				make_array free_array array_push array_pop \
 				bigint bigint2 bigint_inspect bigint_shift \
 				bigint_string bigint_value)
