@@ -6,15 +6,13 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/11 09:45:57 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/11 09:49:16 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-
 AR			= ar -rcs
-RM			= rm -f
 
 NAME		= libft.a
 
