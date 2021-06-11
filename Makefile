@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/08 22:39:34 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/11 09:45:57 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(NAME)		: $(OBJS_TARGET)
 	$(AR) $@ $^
 
 clean		:
-	$(RM) $(OBJS_ALL)
+	$(RM) *.o
 
 fclean		: clean
 	$(RM) $(NAME)
