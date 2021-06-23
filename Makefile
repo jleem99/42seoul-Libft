@@ -6,18 +6,21 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/11 09:49:16 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/23 18:40:02 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+WFLAGS		= -Wall -Wextra -Werror
+INCFLAGS	= -I$(INCDIR)
+CFLAGS		= $(WFLAGS) $(INCFLAGS)
 AR			= ar -rcs
 
 NAME		= libft.a
 
 INCDIR		= .
-SRCDIR		= .
+SRCDIR		= src
+OBJDIR		= build
 
 SRCS_P1		= $(patsubst %, $(SRCDIR)/ft_%.c, \
 				memset bzero memcpy memccpy memmove memchr memcmp \
@@ -39,9 +42,9 @@ SRCS_CUSTOM	= $(patsubst %, $(SRCDIR)/ft_%_bonus.c, \
 				bigint_string bigint_value)
 SRCS_ALL	= $(SRCS_P1) $(SRCS_P2) $(SRCS_BONUS) $(SRCS_CUSTOM)
 
-OBJS_P1		= $(SRCS_P1:.c=.o)
-OBJS_P2		= $(SRCS_P2:.c=.o)
-OBJS_ALL	= $(SRCS_ALL:.c=.o)
+OBJS_P1		= $(SRCS_P1:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJS_P2		= $(SRCS_P2:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJS_ALL	= $(SRCS_ALL:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 ifdef MAKE_BONUS
 	OBJS_TARGET = $(OBJS_ALL)
@@ -54,8 +57,14 @@ all			: $(NAME)
 $(NAME)		: $(OBJS_TARGET)
 	$(AR) $@ $^
 
+$(OBJDIR)	:
+	mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o	: $(SRCDIR)/%.c $(OBJDIR)
+	$(CC) $(CFLAGS) $< -c -o $@
+
 clean		:
-	$(RM) *.o
+	$(RM) -r $(OBJDIR)/*
 
 fclean		: clean
 	$(RM) $(NAME)
