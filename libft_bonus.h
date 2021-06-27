@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/08 22:39:06 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/28 02:25:58 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 ** Personal Functions
 */
 void			ft_free_split(char **split);
+void			ft_putstr_fd_color
+					(char const *s, char const *color, int bg, int fd);
 
 /*
 ** Personal Functions (libc)
