@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/28 02:21:02 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/28 05:05:10 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS_BONUS	= $(patsubst %, $(SRCDIR)/ft_%.c, \
 				lstnew lstadd_front lstsize lstlast lstadd_back \
 				lstdelone lstclear lstiter lstmap)
 SRCS_CUSTOM	= $(patsubst %, $(SRCDIR)/ft_%_bonus.c, \
-				free_split minmax putstr_fd_color \
+				free_split minmax putstr_fd_color memdup \
 				islower isupper isspace strcmp strcpy strcat \
 				atol atoll \
 				make_array free_array array_push array_pop \
