@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 00:50:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/28 02:31:36 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/28 02:39:44 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,21 @@ static char	*get_ansi_escape(char const *color)
 static char	*get_ansi_escape_bg(char const *color)
 {
 	if (!ft_strcmp(color, "black") || !ft_strcmp(color, "BLACK"))
-		return (ANSI_BLACK);
+		return (ANSI_BG_BLACK);
 	else if (!ft_strcmp(color, "red") || !ft_strcmp(color, "RED"))
-		return (ANSI_RED);
+		return (ANSI_BG_RED);
 	else if (!ft_strcmp(color, "green") || !ft_strcmp(color, "GREEN"))
-		return (ANSI_GREEN);
+		return (ANSI_BG_GREEN);
 	else if (!ft_strcmp(color, "yellow") || !ft_strcmp(color, "YELLOW"))
-		return (ANSI_YELLOW);
+		return (ANSI_BG_YELLOW);
 	else if (!ft_strcmp(color, "blue") || !ft_strcmp(color, "BLUE"))
-		return (ANSI_BLUE);
+		return (ANSI_BG_BLUE);
 	else if (!ft_strcmp(color, "magenta") || !ft_strcmp(color, "MAGENTA"))
-		return (ANSI_MAGENTA);
+		return (ANSI_BG_MAGENTA);
 	else if (!ft_strcmp(color, "cyan") || !ft_strcmp(color, "CYAN"))
-		return (ANSI_CYAN);
+		return (ANSI_BG_CYAN);
 	else if (!ft_strcmp(color, "white") || !ft_strcmp(color, "WHITE"))
-		return (ANSI_WHITE);
+		return (ANSI_BG_WHITE);
 	else
 		return (EMPTY_STR);
 }
@@ -116,21 +116,21 @@ static char	*get_ansi_escape_bright(char const *color)
 static char	*get_ansi_escape_bg_bright(char const *color)
 {
 	if (!ft_strcmp(color, "b_black") || !ft_strcmp(color, "B_BLACK"))
-		return (ANSI_BLACK);
+		return (ANSI_BG_BLACK);
 	else if (!ft_strcmp(color, "b_red") || !ft_strcmp(color, "B_RED"))
-		return (ANSI_RED);
+		return (ANSI_BG_RED);
 	else if (!ft_strcmp(color, "b_green") || !ft_strcmp(color, "B_GREEN"))
-		return (ANSI_GREEN);
+		return (ANSI_BG_GREEN);
 	else if (!ft_strcmp(color, "b_yellow") || !ft_strcmp(color, "B_YELLOW"))
-		return (ANSI_YELLOW);
+		return (ANSI_BG_YELLOW);
 	else if (!ft_strcmp(color, "b_blue") || !ft_strcmp(color, "B_BLUE"))
-		return (ANSI_BLUE);
+		return (ANSI_BG_BLUE);
 	else if (!ft_strcmp(color, "b_magenta") || !ft_strcmp(color, "B_MAGENTA"))
-		return (ANSI_MAGENTA);
+		return (ANSI_BG_MAGENTA);
 	else if (!ft_strcmp(color, "b_cyan") || !ft_strcmp(color, "B_CYAN"))
-		return (ANSI_CYAN);
+		return (ANSI_BG_CYAN);
 	else if (!ft_strcmp(color, "b_white") || !ft_strcmp(color, "B_WHITE"))
-		return (ANSI_WHITE);
+		return (ANSI_BG_WHITE);
 	else
 		return (EMPTY_STR);
 }
