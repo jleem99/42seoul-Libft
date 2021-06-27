@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/28 05:05:10 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/28 05:06:10 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ endif
 
 all			: $(NAME)
 
-$(NAME)		: $(OBJS_TARGET) $(OBJDIR)
+$(NAME)		: $(OBJDIR) $(OBJS_TARGET)
 	$(AR) $@ $(OBJS_TARGET)
 
 $(OBJDIR)	:
@@ -64,7 +64,7 @@ $(OBJDIR)/%.o	: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
 clean		:
-	$(RM) -r $(OBJDIR)/*
+	$(RM) -r $(OBJDIR)
 
 fclean		: clean
 	$(RM) $(NAME)
