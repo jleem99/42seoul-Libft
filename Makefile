@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/28 03:47:24 by jleem            ###   ########.fr        #
+#    Updated: 2021/06/28 03:55:18 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ $(OBJDIR)/%.o	: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
 clean		:
-	$(RM) -r $(OBJDIR)/*
+	$(RM) -r $(OBJDIR)
 
 fclean		: clean
 	$(RM) $(NAME)
