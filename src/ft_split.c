@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:18 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/29 07:45:05 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:35:48 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,23 @@ static void	*ft_split_free(char **buf, int str_idx)
 	return (NULL);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char		**ret;
 	int const	str_num = ft_count_strs(s, c);
 	int			str_idx;
 	int			word_idx;
 
-	if (!(ret = malloc(sizeof(*ret) * (str_num + 1))))
+	ret = malloc(sizeof(*ret) * (str_num + 1));
+	if (!ret)
 		return (NULL);
 	str_idx = 0;
 	while (str_idx < str_num)
 	{
 		while (*s == c)
 			s++;
-		if (!(ret[str_idx] = malloc(ft_strlen_chr(s, c) + 1)))
+		ret[str_idx] = malloc(ft_strlen_chr(s, c) + 1);
+		if (!ret[str_idx])
 			return (ft_split_free(ret, str_idx - 1));
 		word_idx = 0;
 		while (*s != '\0' && *s != c)

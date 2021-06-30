@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 17:27:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/26 22:44:20 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:16:11 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_bigint	*make_bigint(size_t size, uint8_t base)
 	return (bigint);
 }
 
-void		free_bigint(t_bigint *bigint)
+void	free_bigint(t_bigint *bigint)
 {
 	free(bigint->data);
 	free(bigint);

@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:23 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 00:44:52 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:33:36 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 static size_t	ft_min(size_t a, size_t b)
 {
-	return (a > b ? b : a);
+	if (a > b)
+		return (b);
+	else
+		return (a);
 }
 
-size_t			ft_strlcat(char *dest, char const *src, size_t dstsize)
+size_t	ft_strlcat(char *dest, char const *src, size_t dstsize)
 {
 	size_t const	dstlen = ft_strlen(dest);
 	size_t const	srclen = ft_strlen(src);

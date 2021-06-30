@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:31:08 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:22:22 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:12:12 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_array_pop(t_array *arr)
 {
-	void	**data_new;
-	void	*ret;
-	size_t	i;
+	void **const	data_new = malloc(sizeof(void *) * (arr->size - 1));
+	void			*ret;
+	size_t			i;
 
-	if (!(data_new = malloc(sizeof(void *) * (arr->size - 1))))
+	if (!data_new)
 		return (NULL);
 	i = 0;
 	while (i < arr->size - 1)

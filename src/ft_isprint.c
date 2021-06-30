@@ -6,13 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:00 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:23:19 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (' ' <= c && c <= '~');
 }

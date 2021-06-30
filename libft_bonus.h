@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:33:51 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/28 05:05:17 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:10:06 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 ** Personal Functions
 */
 void			ft_free_split(char **split);
-void			ft_putstr_fd_color
-					(char const *s, char const *color, int bg, int fd);
+void			ft_putstr_fd_color(char const *s,
+					char const *color,
+					int bg,
+					int fd);
 void			*ft_memdup(void const *src, size_t size);
 
 /*
@@ -47,7 +49,7 @@ int				ft_abs(int n);
 /*
 ** Personal Functions (array)
 */
-typedef struct	s_array
+typedef struct s_array
 {
 	void		**data;
 	size_t		size;
@@ -63,7 +65,7 @@ void			*ft_array_pop(t_array *arr);
 /*
 ** Personal Functions (bigint)
 */
-typedef struct	s_bigint
+typedef struct s_bigint
 {
 	uint8_t		*data;
 	uint8_t		base;
@@ -81,11 +83,11 @@ void			bigint_resize_reverse(t_bigint *bigint, size_t new_size);
 
 void			bigint_set_value(t_bigint *bigint, uint64_t value);
 void			bigint_set_digit(t_bigint *bigint,
-								uint16_t value,
-								size_t byteidx);
+					uint16_t value,
+					size_t byteidx);
 void			bigint_add_digit(t_bigint *bigint,
-								uint8_t addend,
-								size_t byteidx);
+					uint8_t addend,
+					size_t byteidx);
 void			bigint_add(t_bigint *bigint, t_bigint *addend);
 void			bigint_multiply(t_bigint *bigint, uint8_t multiplier);
 
@@ -97,7 +99,7 @@ char			*bigint_to_string_hex(t_bigint *bigint, char base);
 
 void			bigint_inspect_byte(t_bigint const *bigint, size_t byteidx);
 void			bigint_inspect_byte_decimal(t_bigint const *bigint,
-											size_t byteidx);
+					size_t byteidx);
 void			bigint_inspect(t_bigint const *bigint);
 void			bigint_inspect_decimal(t_bigint const *bigint);
 

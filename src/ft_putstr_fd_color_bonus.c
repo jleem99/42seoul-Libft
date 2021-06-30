@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 00:50:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/28 02:41:07 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:17:53 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ static char	*get_ansi_escape_bg_bright(char const *color)
 		return (EMPTY_STR);
 }
 
-void		ft_putstr_fd_color(char const *s, char const *color, int bg, int fd)
+void	ft_putstr_fd_color(char const *s, char const *color, int bg, int fd)
 {
 	if (bg)
 	{

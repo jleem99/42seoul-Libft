@@ -6,14 +6,14 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 05:09:36 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/26 22:44:41 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:16:35 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 #include <stdlib.h>
 
-char		*bigint_to_string(t_bigint *bigint)
+char	*bigint_to_string(t_bigint *bigint)
 {
 	char *const	string = malloc(bigint->size + 1);
 	size_t		byteidx;
@@ -28,7 +28,7 @@ char		*bigint_to_string(t_bigint *bigint)
 	return (string);
 }
 
-char		*bigint_to_string_hex(t_bigint *bigint, char base)
+char	*bigint_to_string_hex(t_bigint *bigint, char base)
 {
 	char *const	string = malloc(bigint->size + 1);
 	uint8_t		byte;

@@ -6,13 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 22:36:47 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/08 22:38:21 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:15:02 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-long		ft_atol(char const *str)
+long	ft_atol(char const *str)
 {
 	long	num;
 	int		sig;

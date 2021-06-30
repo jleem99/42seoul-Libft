@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:08:41 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:23:19 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_isupper(int c)
 	return ('A' <= c && c <= 'Z');
 }
 
-int			ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (ft_isupper(c))
 		return (c + 'a' - 'A');

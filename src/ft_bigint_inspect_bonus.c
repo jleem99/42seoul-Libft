@@ -6,13 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 03:44:42 by jleem             #+#    #+#             */
-/*   Updated: 2021/05/26 22:49:29 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:16:19 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-void		bigint_inspect_byte(t_bigint const *bigint, size_t byteidx)
+void	bigint_inspect_byte(t_bigint const *bigint, size_t byteidx)
 {
 	int		bitmask;
 	int		bit;
@@ -26,12 +26,12 @@ void		bigint_inspect_byte(t_bigint const *bigint, size_t byteidx)
 	}
 }
 
-void		bigint_inspect_byte_decimal(t_bigint const *bigint, size_t byteidx)
+void	bigint_inspect_byte_decimal(t_bigint const *bigint, size_t byteidx)
 {
 	ft_putchar_fd('0' + bigint->data[byteidx], 1);
 }
 
-void		bigint_inspect(t_bigint const *bigint)
+void	bigint_inspect(t_bigint const *bigint)
 {
 	size_t	i;
 
@@ -48,7 +48,7 @@ void		bigint_inspect(t_bigint const *bigint)
 	ft_putchar_fd('\n', 1);
 }
 
-void		bigint_inspect_decimal(t_bigint const *bigint)
+void	bigint_inspect_decimal(t_bigint const *bigint)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:49:02 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/14 17:49:49 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:05:58 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -38,8 +38,8 @@ size_t				ft_strlcat(char *dest, char const *src, size_t dstsize);
 char				*ft_strchr(char const *s, int c);
 char				*ft_strrchr(char const *s, int c);
 char				*ft_strnstr(char const *big,
-								char const *little,
-								size_t len);
+						char const *little,
+						size_t len);
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
 int					ft_atoi(char const *str);
 int					ft_isalpha(int c);
@@ -78,7 +78,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
-								void *(*f)(void *),
-								void (*del)(void *));
+						void *(*f)(void *),
+						void (*del)(void *));
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 06:32:30 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/06 06:34:54 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:17:46 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-int		ft_min(int a, int b)
+int	ft_min(int a, int b)
 {
 	if (a > b)
 		return (b);
@@ -20,7 +20,7 @@ int		ft_min(int a, int b)
 		return (a);
 }
 
-int		ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
 	if (a > b)
 		return (a);
@@ -28,7 +28,7 @@ int		ft_max(int a, int b)
 		return (b);
 }
 
-int		ft_abs(int n)
+int	ft_abs(int n)
 {
 	if (n > 0)
 		return (n);

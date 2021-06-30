@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:10 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:35:09 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, void const *src, size_t n)
 	if (dest > src && dest - src < (int)n)
 	{
 		i = n;
-		while (--i != (size_t)-1)
+		while (i-- != 0)
 			((char *)dest)[i] = ((char *)src)[i];
 	}
 	else if (src > dest && src - dest < (int)n)

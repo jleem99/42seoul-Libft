@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:01 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:34:23 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ char	*ft_itoa(int n)
 	while (digit_index >= 0)
 		digits[i++] = digits_rev[digit_index--];
 	digits[i] = '\0';
-	return (n < 0 ? ft_strjoin("-", digits) : ft_strdup(digits));
+	if (n < 0)
+		return (ft_strjoin("-", digits));
+	else
+		return (ft_strdup(digits));
 }

@@ -6,18 +6,18 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 12:59:13 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:23:08 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:17:31 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	return (c == '\t' ||
-			c == '\n' ||
-			c == '\v' ||
-			c == '\f' ||
-			c == '\r' ||
-			c == ' ');
+	return (c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == ' ');
 }

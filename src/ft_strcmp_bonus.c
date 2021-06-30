@@ -6,13 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 16:46:36 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/14 16:52:33 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:17:57 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-int		ft_strcmp(char const *s1, char const *s2)
+int	ft_strcmp(char const *s1, char const *s2)
 {
 	size_t	i;
 

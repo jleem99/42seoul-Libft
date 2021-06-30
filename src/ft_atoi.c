@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:08:54 by jleem             #+#    #+#             */
-/*   Updated: 2021/01/12 00:40:37 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:24:14 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static int	ft_isspace(int c)
 {
-	return (c == '\t' ||
-			c == '\n' ||
-			c == '\v' ||
-			c == '\f' ||
-			c == '\r' ||
-			c == ' ');
+	return (c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == ' ');
 }
 
-int			ft_atoi(char const *str)
+int	ft_atoi(char const *str)
 {
 	int		num;
 	int		sig;

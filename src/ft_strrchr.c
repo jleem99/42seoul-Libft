@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:09:29 by jleem             #+#    #+#             */
-/*   Updated: 2021/02/04 01:31:15 by jleem            ###   ########.fr       */
+/*   Updated: 2021/06/30 23:30:24 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ char	*ft_strrchr(char const *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
-	while (i != (size_t)-1)
-	{
+	while (i-- != 0)
 		if (s[i] == c)
 			return ((char *)s + i);
-		i--;
-	}
 	return (NULL);
 }
