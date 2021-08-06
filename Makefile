@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/08/06 23:38:16 by jleem            ###   ########.fr        #
+#    Updated: 2021/08/07 06:44:19 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ AR				= ar -rcs
 
 WFLAGS			= -Wall -Wextra -Werror
 INCFLAGS		= -I$(INCDIR)
-CFLAGS			:= $(WFLAGS) $(INCFLAGS) $(CFLAGS)
+CFLAGS_			= $(WFLAGS) $(INCFLAGS) $(CFLAGS)
+unexport CFLAGS_
 
 NAME			= libft.a
 
@@ -62,7 +63,7 @@ $(OBJDIR)		:
 	mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o	: $(SRCDIR)/%.c | $(OBJDIR)
-	$(CC) $(CFLAGS) $^ -c -o $@
+	$(CC) $(CFLAGS_) $^ -c -o $@
 
 clean			:
 	$(RM) -r $(OBJDIR)
