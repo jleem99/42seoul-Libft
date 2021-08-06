@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/08/07 06:44:19 by jleem            ###   ########.fr        #
+#    Updated: 2021/08/07 06:51:54 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,9 @@ clean			:
 fclean			: clean
 	$(RM) $(NAME)
 
-re				: fclean all
+re				:
+	$(MAKE) fclean
+	$(MAKE) all
 
 bonus			:
 	$(MAKE) MAKE_BONUS=1
