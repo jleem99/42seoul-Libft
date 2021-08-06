@@ -6,45 +6,46 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/06/28 16:10:53 by jleem            ###   ########.fr        #
+#    Updated: 2021/08/06 23:38:16 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			= gcc
-WFLAGS		= -Wall -Wextra -Werror
-INCFLAGS	= -I$(INCDIR)
-CFLAGS		= $(WFLAGS) $(INCFLAGS)
-AR			= ar -rcs
+CC				?= clang
+AR				= ar -rcs
 
-NAME		= libft.a
+WFLAGS			= -Wall -Wextra -Werror
+INCFLAGS		= -I$(INCDIR)
+CFLAGS			:= $(WFLAGS) $(INCFLAGS) $(CFLAGS)
 
-INCDIR		= .
-SRCDIR		= src
-OBJDIR		= build
+NAME			= libft.a
 
-SRCS_P1		= $(patsubst %, $(SRCDIR)/ft_%.c, \
-				memset bzero memcpy memccpy memmove memchr memcmp \
-				strlen strlcpy strlcat strchr strrchr strnstr strncmp \
-				atoi isalpha isdigit isalnum isascii isprint \
-				toupper tolower calloc strdup)
-SRCS_P2		= $(patsubst %, $(SRCDIR)/ft_%.c, \
-				substr strjoin strtrim split itoa strmapi \
-				putchar_fd putstr_fd putendl_fd putnbr_fd)
-SRCS_BONUS	= $(patsubst %, $(SRCDIR)/ft_%.c, \
-				lstnew lstadd_front lstsize lstlast lstadd_back \
-				lstdelone lstclear lstiter lstmap)
-SRCS_CUSTOM	= $(patsubst %, $(SRCDIR)/ft_%_bonus.c, \
-				free_split minmax putstr_fd_color memdup \
-				islower isupper isspace strcmp strcpy strcat \
-				atol atoll \
-				make_array free_array array_push array_pop \
-				bigint bigint2 bigint_inspect bigint_shift \
-				bigint_string bigint_value)
-SRCS_ALL	= $(SRCS_P1) $(SRCS_P2) $(SRCS_BONUS) $(SRCS_CUSTOM)
+INCDIR			= .
+SRCDIR			= src
+OBJDIR			= build
 
-OBJS_P1		= $(SRCS_P1:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-OBJS_P2		= $(SRCS_P2:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-OBJS_ALL	= $(SRCS_ALL:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+SRCS_P1			= $(patsubst %, $(SRCDIR)/ft_%.c, \
+					memset bzero memcpy memccpy memmove memchr memcmp \
+					strlen strlcpy strlcat strchr strrchr strnstr strncmp \
+					atoi isalpha isdigit isalnum isascii isprint \
+					toupper tolower calloc strdup)
+SRCS_P2			= $(patsubst %, $(SRCDIR)/ft_%.c, \
+					substr strjoin strtrim split itoa strmapi \
+					putchar_fd putstr_fd putendl_fd putnbr_fd)
+SRCS_BONUS		= $(patsubst %, $(SRCDIR)/ft_%.c, \
+					lstnew lstadd_front lstsize lstlast lstadd_back \
+					lstdelone lstclear lstiter lstmap)
+SRCS_CUSTOM		= $(patsubst %, $(SRCDIR)/ft_%_bonus.c, \
+					free_split minmax putstr_fd_color memdup \
+					islower isupper isspace strcmp strcpy strcat \
+					atol atoll \
+					make_array free_array array_push array_pop \
+					bigint bigint2 bigint_inspect bigint_shift \
+					bigint_string bigint_value)
+SRCS_ALL		= $(SRCS_P1) $(SRCS_P2) $(SRCS_BONUS) $(SRCS_CUSTOM)
+
+OBJS_P1			= $(SRCS_P1:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJS_P2			= $(SRCS_P2:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJS_ALL		= $(SRCS_ALL:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 ifdef MAKE_BONUS
 	OBJS_TARGET = $(OBJS_ALL)
@@ -52,26 +53,26 @@ else
 	OBJS_TARGET = $(OBJS_P1) $(OBJS_P2)
 endif
 
-all			: $(NAME)
+all				: $(NAME)
 
-$(NAME)		: $(OBJS_TARGET)
+$(NAME)			: $(OBJS_TARGET)
 	$(AR) $@ $^
 
-$(OBJDIR)	:
+$(OBJDIR)		:
 	mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o	: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) $^ -c -o $@
 
-clean		:
+clean			:
 	$(RM) -r $(OBJDIR)
 
-fclean		: clean
+fclean			: clean
 	$(RM) $(NAME)
 
-re			: fclean all
+re				: fclean all
 
-bonus		:
+bonus			:
 	$(MAKE) MAKE_BONUS=1
 
-.PHONY		: all clean fclean re bonus
+.PHONY			: all clean fclean re bonus
