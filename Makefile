@@ -6,7 +6,7 @@
 #    By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 21:00:24 by jleem             #+#    #+#              #
-#    Updated: 2021/08/07 06:51:54 by jleem            ###   ########.fr        #
+#    Updated: 2021/10/07 05:53:25 by jleem            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,8 +62,8 @@ $(NAME)			: $(OBJS_TARGET)
 $(OBJDIR)		:
 	mkdir -p $(OBJDIR)
 
-$(OBJDIR)/%.o	: $(SRCDIR)/%.c | $(OBJDIR)
-	$(CC) $(CFLAGS_) $^ -c -o $@
+$(OBJDIR)/%.o	: $(SRCDIR)/%.c $(INCDIR)/*.h | $(OBJDIR)
+	$(CC) $(CFLAGS_) $< -c -o $@
 
 clean			:
 	$(RM) -r $(OBJDIR)
