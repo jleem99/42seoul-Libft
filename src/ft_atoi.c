@@ -6,7 +6,7 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:08:54 by jleem             #+#    #+#             */
-/*   Updated: 2021/11/07 16:08:33 by jleem            ###   ########.fr       */
+/*   Updated: 2021/11/07 16:10:40 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	is_erange(unsigned int acc, char digit, int sig)
 {
 	unsigned int	new_acc;
 	unsigned int	max_acc;
-	
+
 	new_acc = acc * 10 + (digit - '0');
 	if (sig == -1)
 		max_acc = -INT_MIN;
