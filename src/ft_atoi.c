@@ -6,11 +6,13 @@
 /*   By: jleem <jleem@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 00:08:54 by jleem             #+#    #+#             */
-/*   Updated: 2021/06/30 23:24:14 by jleem            ###   ########.fr       */
+/*   Updated: 2021/11/07 16:08:33 by jleem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <errno.h>
+#include <limits.h>
 
 static int	ft_isspace(int c)
 {
@@ -22,29 +24,47 @@ static int	ft_isspace(int c)
 		|| c == ' ');
 }
 
+int	is_erange(unsigned int acc, char digit, int sig)
+{
+	unsigned int	new_acc;
+	unsigned int	max_acc;
+	
+	new_acc = acc * 10 + (digit - '0');
+	if (sig == -1)
+		max_acc = -INT_MIN;
+	else
+		max_acc = INT_MAX;
+	if (new_acc > max_acc)
+	{
+		errno = ERANGE;
+		return (1);
+	}
+	return (0);
+}
+
 int	ft_atoi(char const *str)
 {
-	int		num;
-	int		sig;
+	unsigned int	acc;
+	int				sig;
 
-	num = 0;
+	acc = 0;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '-')
-	{
 		sig = -1;
-		str++;
-	}
 	else
-	{
 		sig = 1;
-		if (*str == '+')
-			str++;
-	}
-	while (ft_isdigit(*str))
+	if (*str == '-' || *str == '+')
+		str++;
+	while (ft_isdigit(*str) && !is_erange(acc, *str, sig))
 	{
-		num *= 10;
-		num += *(str++) - '0';
+		acc *= 10;
+		acc += *(str++) - '0';
 	}
-	return (sig * num);
+	if (!ft_isdigit(*str))
+		return (sig * (int)acc);
+	if (sig == -1)
+		return (INT_MIN);
+	else
+		return (INT_MAX);
 }
